@@ -1,0 +1,25 @@
+#menu{
+   display: flex;
+    justify-content: center; /* center horizontally */
+    align-items: center; /* center vertically */
+    text-align: center;
+}
+#menu a{
+   margin: 2em;
+   font-size: 1em; ;
+   font-family: "Poppins", sans-serif;
+}
+#menu a:link{
+   text-decoration: none;
+}
+#main{
+   display: flex;
+   justify-content: center; /* center horizontally */
+   align-items: center; /* center vertically */
+   text-align: center;
+   font-size: 2em;
+   font-weight: 100;
+}
+img{
+   width: 10em;
+}

@@ -1,0 +1,37 @@
+#menu {
+   display: flex;
+   justify-content: center;
+   /* center horizontally */
+   align-items: center;
+   /* center vertically */
+   text-align: center;
+   
+   font-family: "Poppins", sans-serif;
+}
+
+#menu a {
+   margin: 2em;
+   font-size: 1em;
+   ;
+   
+}
+
+#menu a:link {
+   text-decoration: none;
+}
+
+#UserCreationForm {
+   display: flex;
+   justify-content: center;
+   /* center horizontally */
+   align-items: center;
+   /* center vertically */
+   text-align: left;
+   flex-direction: column;
+   width: 400px;
+   margin: auto;
+}
+#formElement{
+   margin: 1em;
+   text-align: left;
+}

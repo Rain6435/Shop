@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<HEAD>
+    <TITLE>Shopping</TITLE>
+    <link href="signin.css" type="text/css" rel="stylesheet" />
+</HEAD>
+<main>
+    <div id="menu">
+        <a href="/PHP_Project/MainPage/MainPage.html">Main page</a>
+        <a href="/PHP_Project/ProductManagement/Products.php" onclick="return myFunction()"">Products</a>
+        <a href=" /PHP_Project/UserLogIn/UserLogIn.php">Log In/Sign Up</a>
+    </div>
+    <form id="UserCreationForm" method="POST" action="UserCreation.php">
+        <h1>Create Account</h1>
+        <div id="formElement">
+            <label>First Name</label>
+            <input id="firstName" type="text" name="fName" maxlength="15" required>
+        </div>
+        <div id="formElement">
+            <label>Last Name</label>
+            <input id="lastName" type="text" name="lName" maxlength="15" required>
+        </div>
+        <div id="formElement">
+            <label>Birth Day</label>
+            <input id="age" type="date" name="age" maxlength="15" onchange="submitBday()" required>
+
+        </div>
+        <div id="formElement">
+            <label>Email</label>
+            <input id="email" type="email" name="email" required>
+        </div>
+        <div id="formElement">
+            <label>Address Number</label>
+            <input id="addNum" type="text" pattern="[0-9]{0,15}" name="addNum" maxlength="15" required>
+        </div>
+        <div id="formElement">
+            <label>Address Name</label>
+            <input id="addName" type="text" name="addName" maxlength="15" required>
+        </div>
+        <div id="formElement">
+            <label>Address ZIP</label>
+            <input id="addZIP" type="text" placeholder="X0X 0X0" pattern="[A-Z][0-9][A-Z][0-9][A-Z][0-9]" name="addZIP" maxlength="15" required>
+        </div>
+        <div id="formElement">
+            <label>Phone Number</label>
+            <input id="phoneNum" type="tel" name="phoneNum" placeholder="XXX-XXX-XXXX" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+        </div>
+        <div id="formElement">
+            <label>Sex</label>
+            <select id="sex" name="sex" form="UserCreationForm">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        <div id="formElement">
+            <label>Password</label>
+            <input id="password" type="password" name="password" maxlength="15" required>
+        </div>
+        <input id="formSumbit" type="submit" value="Submit" name="submit" onclick="check()">
+    </form>
+</main>
+
+<script>
+    var CryptoJS = require("crypto-js");
+    function submitBday() {
+        var Bdate = document.getElementById('age').value;
+        var Bday = +new Date(Bdate);
+        var s = ~~((Date.now() - Bday) / (31557600000));
+        if (s < 18) {
+            confirm("You must be 18 years old!");
+        }
+
+    }
+    function check() {
+        document.getElementById("password").value = CryptoJS.AES.encrypt(document.getElementById("password").value, 'pswd').toString();
+    }
+</script>

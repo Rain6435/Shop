@@ -1,0 +1,127 @@
+#menu {
+   display: flex;
+   justify-content: center;
+   /* center horizontally */
+   align-items: center;
+   /* center vertically */
+   text-align: center;
+}
+
+#menu a {
+   margin: 2em;
+   font-size: 1em;
+   ;
+   font-family: "Poppins", sans-serif;
+}
+
+#menu a:link {
+   text-decoration: none;
+}
+
+#main {
+   display: flex;
+   justify-content: center;
+   /* center horizontally */
+   align-items: center;
+   /* center vertically */
+   text-align: center;
+   font-family: "Poppins", sans-serif;
+}
+
+h1 {
+   display: flex;
+   justify-content: center;
+}
+
+th {
+   margin: 3em;
+}
+
+#domain {
+   width: 200px;
+}
+
+#bottom {
+   display: flex;
+   justify-content: center;
+   /* center horizontally */
+   align-items: center;
+   /* center vertically */
+   text-align: center;
+   flex-direction: column;
+   font-family: "Poppins", sans-serif;
+}
+
+#botComp {
+   margin: 2em;
+}
+
+.popup {
+   background-color: palegoldenrod;
+   width: 420px;
+   padding: 30px 40px;
+   position:fixed;
+   border-radius: 8px;
+   border-width: 0.5px;
+   border-color: #03549a;
+   margin: auto;
+   font-family: "Poppins", sans-serif;
+   display: none;
+   text-align: center;
+}
+
+.popup button {
+   display: block;
+   margin: 0 0 20px auto;
+   background-color: transparent;
+   font-size: 30px;
+   color: #ffffff;
+   background: #03549a;
+   border-radius: 100%;
+   width: 40px;
+   height: 40px;
+   border: none;
+   outline: none;
+   cursor: pointer;
+}
+
+.popup h2 {
+   margin-top: -20px;
+}
+
+.popup p {
+   font-size: 14px;
+   text-align: justify;
+   margin: 20px 0;
+   line-height: 25px;
+}
+
+a {
+   text-decoration: none;
+}
+
+#checkout{
+   cursor: pointer;
+   outline: 0;
+   display: inline-block;
+   font-weight: 400;
+   line-height: 1.5;
+   text-align: center;
+   background-color: transparent;
+   border: 1px solid transparent;
+   padding: 6px 12px;
+   font-size: 1rem;
+   border-radius: .25rem;
+   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+   color: #0d6efd;
+   border-color: #0d6efd;
+}
+#checkout:hover {
+   color: #fff;
+   background-color: #0d6efd;
+   border-color: #0d6efd;
+}
+
+body{
+   font-family: "Poppins", sans-serif;
+}
