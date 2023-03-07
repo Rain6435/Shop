@@ -8,7 +8,7 @@ create table wineshop.client (
     Age int, 
     EMail text, 
     AdressNum text, 
-    AdresName text, 
+    AdressName text, 
     AdressZIP text, 
     PhoneNum text, 
     Sex varchar(10), 

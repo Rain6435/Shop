@@ -17,7 +17,7 @@ if (isset($_POST['fName'], $_POST['lName'], $_POST['age'], $_POST['email'], $_PO
     }
     if($diff->y >18){
         try {
-            mysqli_select_db($s, "magasin_vin");
+            mysqli_select_db($s, "wineshop");
             mysqli_query($s, "insert into client(FirstName,LastName,Age,EMail,AdressNum,AdressName,AdressZIP,PhoneNum,Sex,Password) values('$uservo->fName','$uservo->lName','$uservo->age','$uservo->email','$uservo->addNum','$uservo->addName','$uservo->addZIP','$uservo->phoneNum','$uservo->sex','$uservo->password');");
             mysqli_close($s);
         } catch (Exception $e) {

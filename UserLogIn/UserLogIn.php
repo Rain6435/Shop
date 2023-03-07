@@ -20,7 +20,7 @@ if (isset($_SESSION['user_id'])) {
             die("Connection failed: " . $s->connect_error);
         }
         try {
-            mysqli_select_db($s, "magasin_vin");
+            mysqli_select_db($s, "wineshop");
             $query = mysqli_query($s, "select * from client where EMail ='" . $_POST['email'] . "';");
             $row = mysqli_fetch_assoc($query);
             if (empty($row)) {

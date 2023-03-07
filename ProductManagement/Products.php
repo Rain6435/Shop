@@ -3,7 +3,7 @@
 session_start();
 $s = mysqli_connect("localhost", "root", "");
 $user_id = $_SESSION['user_id'];
-mysqli_select_db($s, "magasin_vin");
+mysqli_select_db($s, "wineshop");
 
 if(!isset($user_id)){
    header('location:http://localhost/PHP_Project/UserLogIn/UserLogIn.php');
