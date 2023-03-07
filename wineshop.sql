@@ -22,6 +22,7 @@ create table wineshop.products(
     Origin text,
     Price double,
     Image text,
+    Quantity int,
     primary key(ID)
 );
 create table wineshop.cart (

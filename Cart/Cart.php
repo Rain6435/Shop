@@ -1,9 +1,21 @@
 <?php
-
 session_start();
 $s = mysqli_connect("localhost", "root", "");
-$user_id = $_SESSION['user_id'];
-mysqli_select_db($s, "magasin_vin");
+global $user_id;
+function checkLog()
+{
+   if (!isset($_SESSION['user_id']) || session_status() !== PHP_SESSION_ACTIVE) {
+      echo "Please log in!";
+      header('location:http://localhost/PHP_Project/UserLogIn/UserLogIn.php');
+      return false;
+   } else {
+      global $user_id;
+      $user_id = $_SESSION['user_id'];
+      return true;
+   };
+}
+checkLog();
+mysqli_select_db($s, "wineshop");
 $cart = [];
 
 if (isset($_POST['update_cart'])) {
@@ -49,7 +61,7 @@ if (isset($_GET['confirm'])) {
         if (count($r) == 0) {
             debug_to_console('not null!');
         } else {
-            if (count($r) > 1) {
+            if (count($r) >= 1) {
                 $o = [];
                 foreach ($r as $x) {
                     array_push($o, $x[0]);
@@ -64,12 +76,8 @@ if (isset($_GET['confirm'])) {
                 foreach ($que as $j) {
                     mysqli_query($s, "UPDATE `products` set Quantity = Quantity - '$j[0]' where ID = '$j[1]'");
                 }
-            } else {
-                //mysqli_query($s, "INSERT into `orders` (UserID,Total,CartIDs) values ('$user_id','$u','$r')") or die('query failed');
-            }
+            } 
         }
-
-        //header('location:Cart.php');
     } else {
         echo 'Cart empty!';
     }
@@ -168,7 +176,7 @@ if (isset($_GET['confirm'])) {
         </div>
         <div id="bottom">
             <div id="botComp">
-                <div>Grand total avec taxes :
+                <div>Total with taxes :
                     <?php echo $grand_total; ?>$
                 </div>
                 <div>
